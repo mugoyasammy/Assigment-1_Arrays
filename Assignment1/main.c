@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void marks (){
+/*void marks (){
  int PHY[1][4];
  double sum =0;
  double Average;
@@ -49,5 +50,42 @@ void marks (){
 int main(){
 marks();
 
+return 0;
+}*/
+int main(){
+
+    int n,x;
+printf("Enter the number of domestic animals ");
+scanf("%d",&n);
+printf("Enter the number of wild animals ");
+scanf("%d",&x);
+  char Domestic[n][6];
+char Wild[x][6];
+char Merged[n+x][13];
+    int i,j;
+
+printf("Please Enter the Domestic animals");
+printf("\n");
+for(int i =0;i<n;i++){
+    scanf("%s",&Domestic[i]);
+}
+printf("\n\n");
+printf("Please enter the Wild animals");
+printf("\n");
+for( j =0;j<x;j++){
+    scanf("%s",&Wild[j]);
+}
+//printf("\n\n");
+
+for (int i =0;i<n+x;i++){
+    strcpy(Merged[i],Domestic[i]);
+}
+     printf("\n");
+for (int j=0;j<n+x;j++){
+    strcpy(Merged[n+j],Wild[j]);
+}
+     printf("\n");
+for (int i = 0;i<n+x;i++){
+printf("%s\n",Merged[i]);}
 return 0;
 }
