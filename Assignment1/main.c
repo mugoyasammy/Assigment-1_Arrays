@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*void marks (){
+void marks (){
  int PHY[1][4];
- double sum =0;
+
  double Average;
   printf("EnterPhysics marks ");
   printf("\n \n");
   int i,k;
   for (k=0;k<3;k++){
+        double sum =0;
   for( i=0;i<1;i++){
     printf(" Enter Asg CW MID EOT");
     printf("\n \n");
@@ -51,8 +52,8 @@ int main(){
 marks();
 
 return 0;
-}*/
-int main(){
+}
+/*int main(){
 
     int n,x;
 printf("Enter the number of domestic animals ");
@@ -91,4 +92,4 @@ for (int j=0;j<n+x;j++){
 for (int i = 0;i<n+x;i++){
 printf("%s\n",Merged[i]);}
 return 0;
-}
+}*/
