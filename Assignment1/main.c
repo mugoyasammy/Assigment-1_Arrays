@@ -2,56 +2,44 @@
 #include <stdlib.h>
 #include <string.h>
 
-void marks (){
- int PHY[1][4];
+void marks() {
+    int PHY[3][4]; // 3 subjects, 4 marks per subject
+    double sum, average;
+    char subjects[3][20]; // Array to store subject names
 
- double Average;
-  printf("EnterPhysics marks ");
-  printf("\n \n");
-  int i,k;
-  for (k=0;k<3;k++){
-        double sum =0;
-  for( i=0;i<1;i++){
-    printf(" Enter Asg CW MID EOT");
-    printf("\n \n");
-    for(int j = 0;j<4;j++){
-        scanf(" %d",&PHY[i][j]);
+    // Input subject names
+    printf("Enter names of 3 subjects:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Subject %d: ", i + 1);
+        scanf("%s", subjects[i]);
     }
-  } printf("Asg\t Cw\t MID\t EOT");
-    printf("\n \n");
-    for (int i=0;i<1;i++){
-    for(int j = 0;j<4;j++){
-        printf(" %d\t",PHY[i][j]);
-    sum=sum+PHY[i][j];
-          Average = sum/4;
-            printf("\n \n");
 
+    // Enter marks for each subject
+    for (int k = 0; k < 3; k++) {
+        sum = 0; // Reset sum for each subject
+
+        printf("\nEnter marks for %s (Asg, CW, MID, EOT):\n", subjects[k]);
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &PHY[k][j]);
+            sum += PHY[k][j]; // Sum up the marks
+        }
+
+        // Calculate and display results
+        average = sum / 4;
+        printf("\nMarks for %s:\n", subjects[k]);
+        printf("Asg\t CW\t MID\t EOT\n");
+        for (int j = 0; j < 4; j++) {
+            printf("%d\t", PHY[k][j]);
+        }
+
+        printf("\nSum: %.0lf", sum);
+        printf("\nAverage: %.2lf\n", average);
     }
-    printf("The sum is:\t%.0lf",sum);
-     printf("\n \n");
-    printf("The Average mark is:\t%.2lf",Average);
-  }
-  printf("\n \n");
-  if (k ==0){
-  printf("Please Enter Marks for maths");
-    printf("\n ");
-      }
-   else if(k==1){
-    printf("Please Enter Chemistry marks");
-      printf("\n ");
-   }
-   else{}
-    printf("\n \n");
-
-  }
-
-
-
 }
-int main(){
-marks();
 
-return 0;
+int main() {
+    marks();
+    return 0;
 }
 /*int main(){
 
